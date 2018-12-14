@@ -43,7 +43,6 @@
     <project groups="pdk" name="device/sample" revision="83118f3bb87497cf3291ce4e858d8038f9fe7cc3" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/samsung/manta" revision="77236f3331983f283d8d045cd12a4f5b039e5ab5" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="kernel/lk" path="bootable/bootloader/lk" revision="deb00ea65d68e45e2730fc8f901404c31bb3074f" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="kernel/msm-3.10" path="kernel" revision="281185b642ac42be4ff82aa9cceea91c093ac0bc" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/abi/cpp" path="abi/cpp" revision="a0f99286d0909f7a30b0bee742bec2a0b62c4dd0" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/art" path="art" revision="5ad9aa464731b33f1d57d9b99e89caab39108df4" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/bionic" path="bionic" revision="349b61732ae96eb644f7629635b4cbfc71c4b9ba" upstream="LA.BR.1.2.4_rb1.10"/>

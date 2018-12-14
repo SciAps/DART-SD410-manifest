@@ -131,6 +131,6 @@ cp $VAR_PATCH_DIR/device/qcom/msm8916_64/bootanimation.zip $BUILDROOT/device/qco
 cd $BUILDROOT
 #5 Build
 source build/envsetup.sh 
-lunch msm8916_64-userdebug 
+lunch full_chem200-eng
 
 make -j$BUILD_MACHINE WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt

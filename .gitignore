@@ -1,0 +1,4 @@
+.settings/
+xcuserdata/
+*.iml
+*.DS_Store

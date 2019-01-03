@@ -68,13 +68,13 @@ sudo mv ~/Downloads/android-studio ~/android-studio/
 8. Inside the "SDK Platforms" tab, uncheck all boxes except for API level *22* under "SDK Platforms"; hit apply
 9. Switch to the "SDK Tools" tab and check the boxes for *CMake* and uncheck all Android SDK Build-Tools versions except *24.0.3* (check Show Package Details to see all the options); hit apply (do NOT install NDK here, that comes next)
 
-### Download Android NDK r16b
+### Download Android NDK r12b
 ```bash
 rm -rf ~/Android/Sdk/ndk-bundle/ \
 && cd ~/Downloads/ \
-&& curl -o android-ndk.zip -L https://dl.google.com/android/repository/android-ndk-r16b-linux-x86_64.zip \
+&& curl -o android-ndk.zip -L https://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip \
 && sudo unzip android-ndk.zip -d ~/Android/Sdk/ \
-&& mv ~/Android/Sdk/android-ndk-r16b ~/Android/Sdk/ndk-bundle \
+&& mv ~/Android/Sdk/android-ndk-r12b ~/Android/Sdk/ndk-bundle \
 && rm android-ndk.zip \
 && sudo chmod -R 777 ~/Android/Sdk/ndk-bundle/* \
 && sudo chmod -R 777 ~/Android/Sdk/ndk-bundle

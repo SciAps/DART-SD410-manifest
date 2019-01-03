@@ -169,9 +169,7 @@ cp /usr/bin/ld.gold prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_
 ### System Notes
 If you see "Insufficient Permissions" when using adb, just run:
 ```bash
-adb kill-server \
-&& sudo adb start-server \
-&& adb shell
+adb kill-server && sudo adb start-server
 ```
 
 If you see "Read only file system" when attempting to push files onto the device, just adb shell in and then run:
@@ -184,9 +182,7 @@ mount -o rw,remount / \
 ### Flashing
 First, reboot the device into the bootloader:
 ```bash
-adb kill-server \
-&& sudo adb start-server \
-&& adb reboot bootloader
+adb reboot bootloader
 ```
 Wait for fastboot, run this command until you see a device displayed:
 ```bash

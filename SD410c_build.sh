@@ -13,7 +13,7 @@ function SD410_SOURCE_CODE() {
 if [ $? -eq 0 ]
 then
 	echo "Downloading code please wait.."
-	repo init -u git@github.com:SciAps/DART-SD410-manifest.git --repo-url=git@github.com:SciAps/repo.git
+	repo init -u git@github.com:SciAps/DART-SD410-manifest.git --repo-url=git@github.com:SciAps/DART-SD410-repo.git
 	repo sync -j$BUILD_MACHINE
 	repo forall -c "git checkout -b master"
 	repo forall -c "git checkout -b LA.BR.1.2.4-01810-8x16"

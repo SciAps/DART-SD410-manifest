@@ -24,9 +24,6 @@ https://www.ubuntu.com/download/alternative-downloads
 
 ### Download Packages
 ```bash
-sudo apt-get update
-```
-```bash
 sudo add-apt-repository ppa:openjdk-r/ppa
 ```
 ```bash
@@ -69,7 +66,7 @@ sudo mv ~/Downloads/android-studio ~/android-studio/
 6. Use Defaults, keep clicking Next
 7. On the Welcome to Android Studio screen, click the Configure option at the bottom and open the SDK Manager
 8. Inside the "SDK Platforms" tab, uncheck all boxes except for API level *22* under "SDK Platforms"; hit apply
-9. Switch to the "SDK Tools" tab and check the boxes for *CMake* and uncheck all Android SDK Build-Tools versions except *24.0.2* (check Show Package Details to see all the options); hit apply (do NOT install NDK here, that comes next)
+9. Switch to the "SDK Tools" tab and check the boxes for *CMake* and uncheck all Android SDK Build-Tools versions except *24.0.3* (check Show Package Details to see all the options); hit apply (do NOT install NDK here, that comes next)
 
 ### Download Android NDK r16b
 ```bash

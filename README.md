@@ -128,7 +128,7 @@ git config --global user.name "Stephen Gowen" \
 ```bash
 cd ~/dart-sd410 \
 && unzip ~/dart-sd410/Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip \
-&& curl https://raw.githubusercontent.com/SciAps/manifest/master/SD410c_build.sh?token=ADwDDc3rIx2mAo5JVVvSW5FThq2tvvetks5b3l4pwA%3D%3D > ~/dart-sd410/source/SD410c_build.sh \
+&& curl https://raw.githubusercontent.com/SciAps/DART-SD410-manifest/master/SD410c_build.sh?token=ADwDDSTgbl43iQmd-72CLYMFq39YsaRkks5cN5G3wA%3D%3D > ~/dart-sd410/source/SD410c_build.sh \
 && cd source/ \
 && chmod +x SD410c_build.sh \
 && ./SD410c_build.sh

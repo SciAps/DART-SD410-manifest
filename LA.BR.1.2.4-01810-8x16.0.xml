@@ -4,8 +4,8 @@
     <remote fetch="git://codeaurora.org/" name="caf" review="codeaurora.org"/>
     <default remote="caf" revision="LA.BR.1.2.4_rb1.10"/>
     
-    <project remote="sciaps" path="device/sciaps" name="DART-SD410-device_sciaps" revision="master" />
-    <project remote="sciaps" path="vendor/sciaps" name="DART-SD410-vendor" revision="master" />
+    <project remote="sciaps" path="device/sciaps" name="DART-SD410-device_sciaps" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="vendor/sciaps" name="DART-SD410-vendor" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="kernel" name="DART-SD410-kernel" revision="LA.BR.1.2.4-01810-8x16" />
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>

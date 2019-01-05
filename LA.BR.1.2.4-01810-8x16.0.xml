@@ -4,7 +4,7 @@
     <remote fetch="git://codeaurora.org/" name="caf" review="codeaurora.org"/>
     <default remote="caf" revision="LA.BR.1.2.4_rb1.10"/>
     
-    <project remote="sciaps" path="device/sciaps" name="DART-SD410-device_sciaps" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="device/sciaps" name="DART-SD410-device" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="vendor/sciaps" name="DART-SD410-vendor" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="kernel" name="DART-SD410-kernel" revision="LA.BR.1.2.4-01810-8x16" />
     

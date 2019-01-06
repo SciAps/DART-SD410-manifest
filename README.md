@@ -180,7 +180,23 @@ mount -o rw,remount / \
 ```
 
 ### Flashing
-First, reboot the device into the bootloader:
+First, *adb shell* in and run the following to enable adb push:
+```bash
+mount -o rw,remount / \ 
+&& mount -o rw,remount /system \
+&& mkdir -p /system/lib/firmware/ \ 
+&& exit
+```
+After exiting adb shell, push the touch controller driver:
+```bash
+adb push maxtouch-ts.raw /system/lib/firmware/
+```
+Enter *adb shell* again to set up the touch controller to use this config:
+```bash
+echo "maxtouch-ts.raw" > /sys/class/i2c-dev/i2c-6/device/6-004a/update_cfg \
+&& exit
+```
+Now, reboot the device into the bootloader:
 ```bash
 adb reboot bootloader
 ```

@@ -51,6 +51,11 @@ mkdir ~/bin \
 && chmod a+x ~/bin/repo
 ```
 
+### Download maxtouch driver configuration
+```bash
+curl https://s3.us-east-2.amazonaws.com/sciaps-firmware-dependencies/maxtouch-ts.raw > ~/dart-sd410/maxtouch-ts.raw
+```
+
 ### Download and Install Android Studio
 1. https://developer.android.com/studio/index.html
 2. Click the big download button and accept the license
@@ -189,7 +194,7 @@ mount -o rw,remount / \
 ```
 After exiting adb shell, push the touch controller driver:
 ```bash
-adb push maxtouch-ts.raw /system/lib/firmware/
+adb push ~/dart-sd410/maxtouch-ts.raw /system/lib/firmware/
 ```
 Enter *adb shell* again to set up the touch controller to use this config:
 ```bash

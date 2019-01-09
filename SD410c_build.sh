@@ -30,6 +30,7 @@ Apply_android_patches()
 {	cd $WORKDIR
 	wget https://www.codeaurora.org/patches/quic/la/PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0.tar.gz
 	tar -xvzf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0.tar.gz
+	rm -rf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0/frameworks
 	rm -rf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0/kernel
 	cd $BUILDROOT
 	echo "Applying patches ..."
@@ -129,8 +130,3 @@ mv vendor/qcom/proprietary/WCNSS_qcom_wlan_nv.bin device/qcom/msm8916_64/
 Apply_variscite_patches
 cp $VAR_PATCH_DIR/device/qcom/msm8916_64/bootanimation.zip $BUILDROOT/device/qcom/msm8916_64/
 cd $BUILDROOT
-#5 Build
-source build/envsetup.sh 
-lunch full_chem200-eng
-
-make -j$BUILD_MACHINE WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt

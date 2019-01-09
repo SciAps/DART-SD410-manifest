@@ -7,6 +7,8 @@
     <project remote="sciaps" path="device/sciaps" name="DART-SD410-device" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="vendor/sciaps" name="DART-SD410-vendor" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="kernel" name="DART-SD410-kernel" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="frameworks/base" name="DART-SD410-frameworks_base" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="external/libusb" name="DART-SD410-external_libusb" revision="LA.BR.1.2.4-01810-8x16" />
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -208,7 +210,7 @@
     <project groups="pdk-cw-fs" name="platform/external/libssh2" path="external/libssh2" revision="2bb40f2445cab3ba588efb29e1835cdba2b27248" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/external/libtruezip" path="external/libtruezip" revision="45ac3d07b5a4753bd1abc9fa38fd48221312a3d9" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/libunwind" path="external/libunwind" revision="a09d8c184325ef8ef834d0ea8ea886bc636687c5" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk-cw-fs" name="platform/external/libusb" path="external/libusb" revision="2801917fe150393d4f4a354165fe89550ae22613" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project groups="pdk-cw-fs" name="platform/external/libusb" path="external/libusb" revision="2801917fe150393d4f4a354165fe89550ae22613" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk-cw-fs" name="platform/external/libusb-compat" path="external/libusb-compat" revision="94867ba54eb7faa8efca81cf2214d00bb9143d27" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/external/libutf" path="external/libutf" revision="9d00b26b4a6fbdf65f4adcd841e9d885d9102b94" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/external/libvorbis" path="external/libvorbis" revision="de559619fd4dd0d2d9608436696fd44bdf74eba8" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -302,7 +304,7 @@
     <project groups="pdk" name="platform/external/zopfli" path="external/zopfli" revision="bb96afe13a50bfc17259dcf56f44e997923c705c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/external/zxing" path="external/zxing" revision="2b56cc1c1442ba598ed1ee9c23e8e9eade076e77" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/frameworks/av" path="frameworks/av" revision="7d9e7e842e78f53dce04615d4818b6e6098e8519" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk-cw-fs" name="platform/frameworks/base" path="frameworks/base" revision="5d8a0e91d17618798c362f47f93c45f2c0b2fe7a" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project groups="pdk-cw-fs" name="platform/frameworks/base" path="frameworks/base" revision="5d8a0e91d17618798c362f47f93c45f2c0b2fe7a" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk" name="platform/frameworks/compile/libbcc" path="frameworks/compile/libbcc" revision="28c5b1f2a54ef74ed43c0543371282842b15f40b" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/frameworks/compile/mclinker" path="frameworks/compile/mclinker" revision="48b4262286b854f4fa36d2af98cf8d75e87d4dcb" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/frameworks/compile/slang" path="frameworks/compile/slang" revision="d77c484246631ff63cd69d4c4ac00d5d2ccb21f4" upstream="LA.BR.1.2.4_rb1.10"/>

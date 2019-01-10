@@ -139,7 +139,7 @@ cd ~/dart-sd410 \
 && . device/sciaps/common/scripts/SD410c_build.sh
 ```
 
-### Rebuilding Everything
+### Building Everything
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
@@ -147,7 +147,7 @@ cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
-### Rebuilding the Kernel
+### Building the Linux Kernel
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
@@ -156,14 +156,6 @@ cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 ```
 
 ### Build Notes
-If you encounter this error:
-"You have tried to change the API from what has been previously approved"
-just run:
-```bash
-make update-api
-```
-as specified in the message.
-
 If you encounter this error:
 "error: unsupported reloc 43"
 just run:
@@ -183,6 +175,9 @@ mount -o rw,remount / \
 && mount -o rw,remount /system \
 && exit
 ```
+
+We currently support 2 targets: *chem200* and *ngx*
+In all commands, change *chem200* to *ngx* for ngx build
 
 ### Flashing
 First, *adb shell* in and run the following to enable adb push:
@@ -209,7 +204,7 @@ Wait for fastboot, run this command until you see a device displayed:
 ```bash
 sudo fastboot devices
 ```
-Flash and Boot the Entire System!
+Flash the Entire System and Boot!
 ```bash
 RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 && cd $RESCUE_IMAGES_ROOT \
@@ -238,7 +233,7 @@ RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 && sudo fastboot reboot
 ```
 
-Flash just the Linux Kernel and Boot!
+Flash the Linux Kernel and Boot!
 ```bash
 AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && cd $AOSP_ROOT/out/target/product/chem200/ \

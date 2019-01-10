@@ -140,10 +140,11 @@ cd ~/dart-sd410 \
 ```
 
 ### Building Everything
+In the commands that follow, replace $TARGET with *chem200* or *ngx*
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
-&& lunch full_chem200-eng \
+&& lunch full_$TARGET-eng \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
@@ -151,7 +152,7 @@ cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
-&& lunch full_chem200-eng \
+&& lunch full_$TARGET-eng \
 && m kernel
 ```
 
@@ -175,9 +176,6 @@ mount -o rw,remount / \
 && mount -o rw,remount /system \
 && exit
 ```
-
-We currently support 2 targets: *chem200* and *ngx*
-In all commands, change *chem200* to *ngx* for ngx build
 
 ### Flashing
 First, *adb shell* in and run the following to enable adb push:
@@ -222,7 +220,7 @@ RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 && sudo fastboot erase cache \
 && sudo fastboot erase devinfo \
 && AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cd $AOSP_ROOT/out/target/product/chem200/ \
+&& cd $AOSP_ROOT/out/target/product/$TARGET/ \
 && sudo fastboot flash aboot emmc_appsboot.mbn \
 && sudo fastboot flash abootbak emmc_appsboot.mbn \
 && sudo fastboot flash persist persist.img \
@@ -236,7 +234,7 @@ RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 Flash the Linux Kernel and Boot!
 ```bash
 AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cd $AOSP_ROOT/out/target/product/chem200/ \
+&& cd $AOSP_ROOT/out/target/product/$TARGET/ \
 && sudo fastboot flash boot boot.img \
 && sudo fastboot reboot
 ```

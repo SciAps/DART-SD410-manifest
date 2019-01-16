@@ -52,11 +52,6 @@ mkdir ~/bin \
 && chmod a+x ~/bin/repo
 ```
 
-### Download maxtouch driver configuration
-```bash
-curl https://s3.us-east-2.amazonaws.com/sciaps-firmware-dependencies/maxtouch-ts.raw > ~/dart-sd410/maxtouch-ts.raw
-```
-
 ### Download and Install Android Studio
 1. https://developer.android.com/studio/index.html
 2. Click the big download button and accept the license
@@ -139,7 +134,7 @@ cd ~/dart-sd410 \
 && . device/sciaps/common/scripts/SD410c_build.sh
 ```
 
-### Building Everything
+### Building
 In the commands that follow, replace $TARGET with *chem200* or *ngx*
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
@@ -148,29 +143,22 @@ cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
-### Building the Linux Kernel
-```bash
-cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& . build/envsetup.sh \
-&& lunch full_$TARGET-eng \
-&& m kernel
-```
-
 ### Build Notes
 If you encounter this error:
 "error: unsupported reloc 43"
 just run:
 ```bash
-cp /usr/bin/ld.gold prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
+AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& cp /usr/bin/ld.gold $AOSP_ROOT/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
 ```
 
 ### System Notes
-If you see "Insufficient Permissions" when using adb, just run:
+If you see *Insufficient Permissions* when using adb, just run:
 ```bash
 adb kill-server && sudo adb start-server
 ```
 
-If you see "Read only file system" when attempting to push files onto the device, just adb shell in and then run:
+If you see *Read only file system* when attempting to push files onto the device, just **adb shell** in and run:
 ```bash
 mount -o rw,remount / \
 && mount -o rw,remount /system \
@@ -178,23 +166,7 @@ mount -o rw,remount / \
 ```
 
 ### Flashing
-First, *adb shell* in and run the following to enable adb push:
-```bash
-mount -o rw,remount / \ 
-&& mount -o rw,remount /system \
-&& mkdir -p /system/lib/firmware/ \ 
-&& exit
-```
-After exiting adb shell, push the touch controller driver:
-```bash
-adb push ~/dart-sd410/maxtouch-ts.raw /system/lib/firmware/
-```
-Enter *adb shell* again to set up the touch controller to use this config:
-```bash
-echo "maxtouch-ts.raw" > /sys/class/i2c-dev/i2c-6/device/6-004a/update_cfg \
-&& exit
-```
-Now, reboot the device into the bootloader:
+Reboot the device into the bootloader:
 ```bash
 adb reboot bootloader
 ```
@@ -202,7 +174,7 @@ Wait for fastboot, run this command until you see a device displayed:
 ```bash
 sudo fastboot devices
 ```
-Flash the Entire System and Boot!
+Flash the System and Boot!
 ```bash
 RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 && cd $RESCUE_IMAGES_ROOT \
@@ -227,14 +199,6 @@ RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 && sudo fastboot flash userdata userdata.img \
 && sudo fastboot flash system system.img \
 && sudo fastboot flash recovery recovery.img \
-&& sudo fastboot flash boot boot.img \
-&& sudo fastboot reboot
-```
-
-Flash the Linux Kernel and Boot!
-```bash
-AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cd $AOSP_ROOT/out/target/product/$TARGET/ \
 && sudo fastboot flash boot boot.img \
 && sudo fastboot reboot
 ```

@@ -129,9 +129,9 @@ git config --global user.name "Stephen Gowen" \
 ```bash
 cd ~/dart-sd410 \
 && unzip ~/dart-sd410/Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip \
-&& cd source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& chmod +x device/sciaps/common/scripts/SD410c_build.sh \
-&& . device/sciaps/common/scripts/SD410c_build.sh
+&& cd source \
+&& chmod +x SD410c_build.sh \
+&& ./SD410c_build.sh
 ```
 
 ### Building

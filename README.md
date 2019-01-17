@@ -14,7 +14,7 @@ https://www.ubuntu.com/download/alternative-downloads
 4. Type in a password and click *Continue*
 5. Check the "Customize settings before installation" checkbox and click *Create*
 6. In the "Configuration" window, click on the *Hardware* tab
-7. Bump up the memory to 4096MB at the minimum if you can
+7. Bump up the memory to 4096MB at a minimum if you can
 8. Bump up the graphics memory to 512 MB if you can
 9. Under "Hard Disk", open the "Advanced Settings" and click on *Properties*
 10. Drag the slider to 512 GB if you can and click *Apply*
@@ -122,8 +122,7 @@ git config --global user.name "Stephen Gowen" \
 1. Log in to GitHub, and then paste your clipboard into the Key box
 2. Type Ubuntu AOSP into the Title box
 3. Click *Add SSH key*
-4. Restart your Ubuntu VM
-5. Wait at least a full minute before proceeding
+4. Wait at least a full minute before proceeding
 
 ### Initialize and repo sync the SciAps fork of the Android 5.1.1 Firmware
 ```bash
@@ -135,8 +134,7 @@ cd ~/dart-sd410 \
 && ./SD410c_build.sh
 ```
 
-### Building
-In the commands that follow, replace $TARGET with *chem200* or *ngx*
+### Building (replace $TARGET with *chem200* or *ngx*)
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
@@ -166,7 +164,7 @@ mount -o rw,remount / \
 && exit
 ```
 
-### Flashing
+### Flashing (replace $TARGET with *chem200* or *ngx*)
 Reboot the device into the bootloader:
 ```bash
 adb reboot bootloader

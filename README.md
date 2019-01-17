@@ -38,9 +38,9 @@ sudo apt-get -y install build-essential libc6:i386 libncurses5:i386 libstdc++6:i
 
 ### Download Variscite Resources
 ```bash
-mkdir ~/dart-sd410 \
-&& cd ~/Downloads \
+cd ~/Downloads \
 && wget -m --user=dart-sd410 --password=varSD410 ftp://ftp.variscite.com \
+&& mkdir ~/dart-sd410 \
 && mv ~/Downloads/ftp.variscite.com ~/dart-sd410
 ```
 
@@ -143,9 +143,7 @@ cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 ```
 
 ### Build Notes
-If you encounter this error:
-"error: unsupported reloc 43"
-just run:
+If you encounter this error: *unsupported reloc 43*, just run:
 ```bash
 AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && cp /usr/bin/ld.gold $AOSP_ROOT/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
@@ -156,7 +154,6 @@ If you see *Insufficient Permissions* when using adb, just run:
 ```bash
 adb kill-server && sudo adb start-server
 ```
-
 If you see *Read only file system* when attempting to push files onto the device, just **adb shell** in and run:
 ```bash
 mount -o rw,remount / \

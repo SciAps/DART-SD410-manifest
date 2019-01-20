@@ -134,19 +134,18 @@ cd ~/dart-sd410 \
 && ./SD410c_build.sh
 ```
 
+### Replace Linker:
+```bash
+AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& cp /usr/bin/ld.gold $AOSP_ROOT/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
+```
+
 ### Building (replace $TARGET with *chem200* or *ngx*)
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
 && lunch full_$TARGET-eng \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
-```
-
-### Build Notes
-If you encounter this error: *unsupported reloc 43*, just run:
-```bash
-AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cp /usr/bin/ld.gold $AOSP_ROOT/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
 ```
 
 ### System Notes

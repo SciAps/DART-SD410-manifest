@@ -1,10 +1,10 @@
-# Configuring Ubuntu 16.04 LTS Dev Environment
+# Configuring Ubuntu 14.04 LTS Dev Environment
 
 ### Additional Resources
 1. https://source.android.com/source/requirements
 2. http://variwiki.com/index.php?title=DART-SD410
 
-### Download Ubuntu 16.04 iso
+### Download Ubuntu 14.04 iso
 https://www.ubuntu.com/download/alternative-downloads
 
 ### Preliminary steps for macOS Parallels users only
@@ -119,14 +119,14 @@ git config --global user.name "Stephen Gowen" \
 3. Click *Add SSH key*
 4. Wait at least a full minute before proceeding
 
-### Unzip Variscite's Board Support Package
+### Unzip Variscite's Board Support Package (creates ~/dart-sd410/source)
 ```bash
 cd ~/dart-sd410 \
 && rm -rf source \
 && unzip Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip
 ```
 
-### Download and execute our setup script (modified from SD410c_build.sh), which invokes repo sync
+### Download and execute our setup script (modified from SD410c_build.sh), which invokes repo sync and applies patches to several projects
 ```bash
 cd ~/dart-sd410/source \
 && curl https://raw.githubusercontent.com/SciAps/DART-SD410-manifest/master/SD410c_setup.sh > SD410c_setup.sh \
@@ -165,11 +165,7 @@ mount -o rw,remount / \
 ### Flashing (replace $TARGET with *chem200* or *ngx*)
 Reboot the device into the bootloader:
 ```bash
-adb reboot bootloader
-```
-Wait for fastboot, run this command until you see a device displayed:
-```bash
-sudo fastboot devices
+adb wait-for-device && adb reboot bootloader
 ```
 Flash the System and Boot!
 ```bash

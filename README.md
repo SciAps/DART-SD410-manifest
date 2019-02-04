@@ -122,9 +122,10 @@ git config --global user.name "Stephen Gowen" \
 ### Initialize and repo sync the SciAps fork of the Android 5.1.1 Firmware
 ```bash
 cd ~/dart-sd410 \
-&& unzip ~/dart-sd410/Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip \
+&& unzip Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip \
 && cd source \
-&& curl https://s3.us-east-2.amazonaws.com/sciaps-firmware-dependencies/SD410c_build.sh > ~/dart-sd410/source/SD410c_build.sh \
+&& mv SD410c_build.sh SD410c_build.sh.orig \
+&& curl https://raw.githubusercontent.com/SciAps/DART-SD410-manifest/master/SD410c_build.sh > ~/dart-sd410/source/SD410c_build.sh \
 && chmod +x SD410c_build.sh \
 && ./SD410c_build.sh
 ```

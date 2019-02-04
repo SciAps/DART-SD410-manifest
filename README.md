@@ -45,7 +45,7 @@ cd ~/Downloads \
 
 ### Download Google Repo Tool
 ```bash
-mkdir ~/bin \
+mkdir -p ~/bin \
 && export PATH=~/bin:$PATH \
 && curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo \
 && chmod a+x ~/bin/repo
@@ -119,16 +119,22 @@ git config --global user.name "Stephen Gowen" \
 3. Click *Add SSH key*
 4. Wait at least a full minute before proceeding
 
-### Initialize and repo sync the SciAps fork of the Android 5.1.1 Firmware
+### Unzip Variscite's Board Support Package
 ```bash
 cd ~/dart-sd410 \
-&& unzip Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip \
-&& cd source \
-&& mv SD410c_build.sh SD410c_build.sh.orig \
-&& curl https://raw.githubusercontent.com/SciAps/DART-SD410-manifest/master/SD410c_build.sh > ~/dart-sd410/source/SD410c_build.sh \
-&& chmod +x SD410c_build.sh \
-&& ./SD410c_build.sh
+&& rm -rf source \
+&& unzip Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip
 ```
+
+### Download and execute our setup script (modified from SD410c_build.sh), which invokes repo sync
+```bash
+cd ~/dart-sd410/source \
+&& curl https://raw.githubusercontent.com/SciAps/DART-SD410-manifest/master/SD410c_setup.sh > SD410c_setup.sh \
+&& chmod +x SD410c_setup.sh \
+&& ./SD410c_setup.sh
+```
+
+Hit **[ENTER]** at the Your Name/Email prompts, hit **y** to continue
 
 ### Replace Linker:
 ```bash

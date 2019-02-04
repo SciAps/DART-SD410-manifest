@@ -54,19 +54,15 @@ mkdir ~/bin \
 ### Download and Install Android Studio
 1. https://developer.android.com/studio/index.html
 2. Click the big download button and accept the license
-3. When prompted, click "Open with Archive Manager", extract to Downloads folder and then run:
-```bash
-sudo mv ~/Downloads/android-studio ~/android-studio/
-```
-4. Run Android Studio:
+3. When prompted, click "Open with Archive Manager", extract to Home folder and then run:
 ```bash
 ~/android-studio/bin/studio.sh &
 ```
-5. In the Android Studio Setup Wizard, click Custom
-6. Use Defaults, keep clicking Next
-7. On the Welcome to Android Studio screen, click the Configure option at the bottom and open the SDK Manager
-8. Inside the "SDK Platforms" tab, uncheck all boxes except for API level *22* under "SDK Platforms"; hit apply
-9. Switch to the "SDK Tools" tab and check the boxes for *CMake* and uncheck all Android SDK Build-Tools versions except *24.0.3* (check Show Package Details to see all the options); hit apply (do NOT install NDK here, that comes next)
+4. In the Android Studio Setup Wizard, click Custom
+5. Use Defaults, keep clicking Next
+6. On the Welcome to Android Studio screen, click the Configure option at the bottom and open the SDK Manager
+7. Inside the "SDK Platforms" tab, uncheck all boxes except for API level *22* under "SDK Platforms"; hit apply
+8. Switch to the "SDK Tools" tab and check the boxes for *CMake* and uncheck all Android SDK Build-Tools versions except *24.0.3* (check Show Package Details to see all the options); hit apply (do NOT install NDK here, that comes next)
 
 ### Download Android NDK r12b
 ```bash
@@ -143,7 +139,7 @@ AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollip
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
-&& lunch full_$TARGET-eng \
+&& lunch $TARGET-eng \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 

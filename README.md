@@ -136,10 +136,12 @@ cd ~/dart-sd410/source \
 
 Hit **[ENTER]** at the Your Name/Email prompts, hit **y** to continue
 
-### Replace Linker:
+### Replace Prebuilt Linker with Ubuntu 14.04 Linker:
 ```bash
 AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cp /usr/bin/ld.gold $AOSP_ROOT/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
+&& PREBUILTS_LD=prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld \
+&& mv $AOSP_ROOT/$PREBUILTS_LD $AOSP_ROOT/$PREBUILTS_LD.bak \
+&& cp /usr/bin/ld.gold $AOSP_ROOT/$PREBUILTS_LD
 ```
 
 ### Building (replace $TARGET with *chem200* or *ngx*)

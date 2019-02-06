@@ -136,14 +136,6 @@ cd ~/dart-sd410/source \
 
 Hit **[ENTER]** at the Your Name/Email prompts, hit **y** to continue
 
-### Replace Prebuilt Linker with Ubuntu 14.04 Linker:
-```bash
-AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& PREBUILTS_LD=prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld \
-&& mv $AOSP_ROOT/$PREBUILTS_LD $AOSP_ROOT/$PREBUILTS_LD.bak \
-&& cp /usr/bin/ld.gold $AOSP_ROOT/$PREBUILTS_LD
-```
-
 ### Building (replace $TARGET with *chem200* or *ngx*)
 ```bash
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
@@ -157,11 +149,10 @@ If you see *Insufficient Permissions* when using adb, just run:
 ```bash
 adb kill-server && sudo adb start-server
 ```
-If you see *Read only file system* when attempting to push files onto the device, just **adb shell** in and run:
+If you see *Read only file system* when attempting to push files onto the device, just run:
 ```bash
-mount -o rw,remount / \
-&& mount -o rw,remount /system \
-&& exit
+adb -d shell mount -o rw,remount / \
+&& adb -d shell mount -o rw,remount /system
 ```
 
 ### Flashing (replace $TARGET with *chem200* or *ngx*)

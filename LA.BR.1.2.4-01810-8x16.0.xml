@@ -399,7 +399,7 @@
     <project name="platform/packages/apps/HTMLViewer" path="packages/apps/HTMLViewer" revision="b423ec51b2cacd658da9195de24bea176dff4100" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/InCallUI" path="packages/apps/InCallUI" revision="6304f722b617a52169e9fef3fb331974533ca3e3" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/KeyChain" path="packages/apps/KeyChain" revision="5f2121a15ef5df9bf508e7270ed2155d87fee732" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/packages/apps/Launcher2" path="packages/apps/Launcher2" revision="9b374b304aeb1d7baa1673a9908054c0e3a65d29" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="platform/packages/apps/Launcher2" path="packages/apps/Launcher2" revision="9b374b304aeb1d7baa1673a9908054c0e3a65d29" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project name="platform/packages/apps/LegacyCamera" path="packages/apps/LegacyCamera" revision="090283cfff2a09f1ea960fd2ef87564099027ab0" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/ManagedProvisioning" path="packages/apps/ManagedProvisioning" revision="6350c1173d42f76a9ff97bfd5892a4f23289dee4" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Mms" path="packages/apps/Mms" revision="7a99cf095e66c4a9e3142878e7f78667ef4dada7" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -422,7 +422,7 @@
     <project name="platform/packages/apps/Stk" path="packages/apps/Stk" revision="63b81744c6702f2504e6b05b2d93026cf25af2a9" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Tag" path="packages/apps/Tag" revision="72da61495ca5e47b18640d9721298b3677cf6c7d" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Terminal" path="packages/apps/Terminal" revision="1a161f759167dc8824ea40d3f661a69799b59e3b" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/packages/apps/Trebuchet" path="packages/apps/Trebuchet" revision="f592bfc5b68c56c2c04d025dd4cc45ab80c70f9d" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="platform/packages/apps/Trebuchet" path="packages/apps/Trebuchet" revision="f592bfc5b68c56c2c04d025dd4cc45ab80c70f9d" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project name="platform/packages/apps/TvSettings" path="packages/apps/TvSettings" revision="66fc0b501c10bef98bd52c8d480225b44da68b33" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/UnifiedEmail" path="packages/apps/UnifiedEmail" revision="f1f095627624f0eb716e92ead69f353f37418dd3" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/VoiceDialer" path="packages/apps/VoiceDialer" revision="5e822ee166d8ca0357fbf74188c32dd6937c144e" upstream="LA.BR.1.2.4_rb1.10"/>

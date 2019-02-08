@@ -9,6 +9,7 @@
     <project remote="sciaps" path="kernel" name="DART-SD410-kernel" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="frameworks/base" name="DART-SD410-frameworks_base" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="external/libusb" name="DART-SD410-external_libusb" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="development" name="DART-SD410-development" revision="LA.BR.1.2.4-01810-8x16" />
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -59,7 +60,7 @@
     <project groups="pdk" name="platform/developers/demos" path="developers/demos" revision="0d58ac86357ea5ccdde0cec680462e59a5c7276b" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/developers/docs" path="developers/docs" revision="c0b835ddd9acc27176dc9a0f7d1aa2faf5d51806" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/developers/samples/android" path="developers/samples/android" revision="7ca05a001576d5a05548f78a6ae26f2ca85ceee5" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk-cw-fs" name="platform/development" path="development" revision="943dd603f9da2abb62752ca53c732b143b80f3d2" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project groups="pdk-cw-fs" name="platform/development" path="development" revision="943dd603f9da2abb62752ca53c732b143b80f3d2" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk" name="platform/docs/source.android.com" path="docs/source.android.com" revision="0463632e9bf7318e7e676359a6cef5867b3e9829" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/aac" path="external/aac" revision="6792cf6361ff339e336287affb0bfe54bf6957a9" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/external/android-clat" path="external/android-clat" revision="7a4162af0d7bac06ef59066200a004bb13e3e703" upstream="LA.BR.1.2.4_rb1.10"/>

@@ -51,6 +51,24 @@ mkdir -p ~/bin \
 && chmod a+x ~/bin/repo
 ```
 
+### Make sure you are authorized for SciAps repositories
+[more on this here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux)
+
+Before running this command, change "Stephen Gowen" and "dev.sgowen@gmail.com" accordingly:
+```bash
+git config --global user.name "Stephen Gowen" \
+&& git config --global user.email "dev.sgowen@gmail.com" \
+&& ssh-keygen -t rsa -N "" -b 4096 -C "dev.sgowen@gmail.com" -f ~/.ssh/id_rsa \
+&& eval "$(ssh-agent -s)" \
+&& ssh-add ~/.ssh/id_rsa \
+&& xclip -sel clip < ~/.ssh/id_rsa.pub \
+&& xdg-open https://github.com/settings/ssh/new
+```
+
+1. Log in to GitHub, and then paste your clipboard into the Key box
+2. Type Ubuntu AOSP into the Title box
+3. Click *Add SSH key*
+
 ### Download and Install Android Studio
 1. https://developer.android.com/studio/index.html
 2. Click the big download button and accept the license
@@ -99,25 +117,6 @@ At the bottom of the file, you need to add a line that will tell the operating s
 /swapfile   none    swap    sw    0   0
 
 Hit CTRL+X and then Y to save and exit, and your swap is good to go.
-
-### Make sure you are authorized for SciAps repositories
-[more on this here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux)
-
-Before running this command, change "Stephen Gowen" and "dev.sgowen@gmail.com" accordingly:
-```bash
-git config --global user.name "Stephen Gowen" \
-&& git config --global user.email "dev.sgowen@gmail.com" \
-&& ssh-keygen -t rsa -N "" -b 4096 -C "dev.sgowen@gmail.com" -f ~/.ssh/id_rsa \
-&& eval "$(ssh-agent -s)" \
-&& ssh-add ~/.ssh/id_rsa \
-&& xclip -sel clip < ~/.ssh/id_rsa.pub \
-&& xdg-open https://github.com/settings/ssh/new
-```
-
-1. Log in to GitHub, and then paste your clipboard into the Key box
-2. Type Ubuntu AOSP into the Title box
-3. Click *Add SSH key*
-4. Wait at least a full minute before proceeding
 
 ### Unzip Variscite's Board Support Package (creates ~/dart-sd410/source)
 ```bash

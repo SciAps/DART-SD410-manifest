@@ -141,7 +141,7 @@ Hit **[ENTER]** at the Your Name/Email prompts, hit **y** to continue
 cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
-&& m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
+&& m WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
 ### System Notes

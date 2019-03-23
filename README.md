@@ -54,11 +54,13 @@ mkdir -p ~/bin \
 ### Make sure you are authorized for SciAps repositories
 [more on this here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux)
 
-Before running this command, change "Stephen Gowen" and "dev.sgowen@gmail.com" accordingly:
+Before running this command, define FULL_NAME and EMAIL accordingly:
 ```bash
-git config --global user.name "Stephen Gowen" \
-&& git config --global user.email "dev.sgowen@gmail.com" \
-&& ssh-keygen -t rsa -N "" -b 4096 -C "dev.sgowen@gmail.com" -f ~/.ssh/id_rsa \
+FULL_NAME=Stephen Gowen \
+&& EMAIL=dev.sgowen@gmail.com \
+&& git config --global user.name "$FULL_NAME" \
+&& git config --global user.email "$EMAIL" \
+&& ssh-keygen -t rsa -N "" -b 4096 -C "$EMAIL" -f ~/.ssh/id_rsa \
 && eval "$(ssh-agent -s)" \
 && ssh-add ~/.ssh/id_rsa \
 && xclip -sel clip < ~/.ssh/id_rsa.pub \
@@ -135,9 +137,10 @@ cd ~/dart-sd410/source \
 
 Hit **[ENTER]** at the Your Name/Email prompts, hit **y** to continue
 
-### Building (replace $TARGET with *chem200* or *ngx*)
+### Building (define TARGET as *chem200* or *ngx*)
 ```bash
-cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+TARGET=ngx \
+&& cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
 && m WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
@@ -154,14 +157,15 @@ adb -d shell mount -o rw,remount / \
 && adb -d shell mount -o rw,remount /system
 ```
 
-### Flashing (replace $TARGET with *chem200* or *ngx*)
+### Flashing (define TARGET as *chem200* or *ngx*)
 Reboot the device into the bootloader:
 ```bash
 adb wait-for-device && adb reboot bootloader
 ```
 Flash the System and Boot!
 ```bash
-RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
+TARGET=ngx \
+&& RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
 && cd $RESCUE_IMAGES_ROOT \
 && sudo fastboot flash partition gpt_both0.bin \
 && sudo fastboot flash hyp hyp.mbn \

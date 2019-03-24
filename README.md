@@ -135,7 +135,7 @@ cd ~/dart-sd410/source \
 && ./SD410c_setup.sh
 ```
 
-Hit **[ENTER]** at the Your Name/Email prompts, hit **y** to continue
+Enter **yes** 2 times when prompted, then hit **[ENTER]** at the Your Name/Email prompts, then enter **y** 2 times to continue
 
 ### Building (define TARGET as *chem200* or *ngx*)
 ```bash
@@ -144,6 +144,15 @@ TARGET=ngx \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
+```
+
+### Rebuilding (same as the previous command, but on a single thread | define TARGET as *chem200* or *ngx*)
+```bash
+TARGET=ngx \
+&& cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& . build/envsetup.sh \
+&& lunch $TARGET-eng \
+&& m WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
 ### System Notes

@@ -10,6 +10,14 @@
     <project remote="sciaps" path="frameworks/base" name="DART-SD410-frameworks_base" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="external/libusb" name="DART-SD410-external_libusb" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="development" name="DART-SD410-development" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="build" name="DART-SD410-build" revision="LA.BR.1.2.4-01810-8x16">
+        <copyfile dest="Makefile" src="core/root.mk"/>
+    </project>
+    <project remote="sciaps" path="device/qcom/common" name="DART-SD410-device_qcom_common" revision="LA.BR.1.2.4-01810-8x16" />
+        <copyfile dest="build.sh" src="build.sh"/>
+        <copyfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
+    </project>
+    <project remote="sciaps" path="device/qcom/msm8916_64" name="DART-SD410-device_qcom_msm8916_64" revision="LA.BR.1.2.4-01810-8x16" />
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -38,10 +46,10 @@
     <project groups="pdk" name="device/htc/flounder-kernel" revision="02e91bef07ad4ff73bbfd32c2c0fcf72c04a984f" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/lge/mako" revision="fd2864cbc966d9c604a9a02cb8b2cb651bcbf046" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/lge/mako-kernel" revision="47f07b742698f2a6e838cb37b84fcd8c8ed1f276" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="device/qcom/common" revision="8cc3ab8fe6b75c8be7fe428404e31fbedf336bf7" upstream="LA.BR.1.2.4_rb1.10">
-        <copyfile dest="build.sh" src="build.sh"/>
-        <copyfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
-    </project>
+<!--    <project name="device/qcom/common" revision="8cc3ab8fe6b75c8be7fe428404e31fbedf336bf7" upstream="LA.BR.1.2.4_rb1.10">-->
+<!--        <copyfile dest="build.sh" src="build.sh"/>-->
+<!--        <copyfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>-->
+<!--    </project>-->
     <project name="device/qcom/sepolicy" revision="87ddf84557405d72ec7f7332922d0e4630ef8de5" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/sample" revision="83118f3bb87497cf3291ce4e858d8038f9fe7cc3" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/samsung/manta" revision="77236f3331983f283d8d045cd12a4f5b039e5ab5" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -51,9 +59,9 @@
     <project groups="pdk" name="platform/bionic" path="bionic" revision="349b61732ae96eb644f7629635b4cbfc71c4b9ba" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/bootable/bootloader/legacy" path="bootable/bootloader/legacy" revision="3c491d6efb8ff2534a6934702760a6273f197918" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/bootable/recovery" path="bootable/recovery" revision="eb1313d99178a59c1d8f82807a02ad1bece41617" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk" name="platform/build" path="build" revision="a2446ac5a2edc14bc0e68ec9860a4eeec1ad39a3" upstream="LA.BR.1.2.4_rb1.10">
-        <copyfile dest="Makefile" src="core/root.mk"/>
-    </project>
+<!--    <project groups="pdk" name="platform/build" path="build" revision="a2446ac5a2edc14bc0e68ec9860a4eeec1ad39a3" upstream="LA.BR.1.2.4_rb1.10">-->
+<!--        <copyfile dest="Makefile" src="core/root.mk"/>-->
+<!--    </project>-->
     <project groups="cts,pdk-cw-fs" name="platform/cts" path="cts" revision="32f23d18f4ab3180fe5e3887d4846f8703c32c5b" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/dalvik" path="dalvik" revision="80e8c866651f889f59ab66912fca9e88601934e9" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/developers/build" path="developers/build" revision="577f68cfc1b46b041987d2c2695eabc7f3e490f1" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -537,7 +545,7 @@
     <project name="platform/vendor/qcom/msm8916_32_512" path="device/qcom/msm8916_32_512" revision="ae46dffd9a1076e1af02d478b99bc1ee8550f1b2" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/msm8916_32_LMT" path="device/qcom/msm8916_32_LMT" revision="4318bf841a1030b37dea14fe66d1b395c05a3930" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/msm8916_32_k64" path="device/qcom/msm8916_32_k64" revision="25cc643509d4e4848bc437f71b9487bd2b3ff69b" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/vendor/qcom/msm8916_64" path="device/qcom/msm8916_64" revision="862cf12cfdfe7dabd579d567d820af12110edf85" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="platform/vendor/qcom/msm8916_64" path="device/qcom/msm8916_64" revision="862cf12cfdfe7dabd579d567d820af12110edf85" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project name="platform/vendor/qcom/msm8916_64_LMT" path="device/qcom/msm8916_64_LMT" revision="35d5936246426a1e79b55cb6752a901d9aaacdca" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/plutonium" path="device/qcom/msm8994" revision="22b8d5aac917fdb3779710be3adccf56bd1fe0f8" upstream="LA.BR.1.2.4_rb1.10"/>
 </manifest>

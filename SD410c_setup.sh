@@ -32,6 +32,8 @@ Apply_android_patches()
 	tar -xvzf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0.tar.gz
 	rm -rf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0/frameworks
 	rm -rf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0/kernel
+    rm -rf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0/device/qcom/common
+    rm -rf PATCH_8x16_129905_410c_LA.BR.1.2.4-01810-8x16.0/device/qcom/msm8916_64
 	cd $BUILDROOT
 	echo "Applying patches ..."
 	if [ ! -e $PATCH_DIR ]
@@ -40,34 +42,6 @@ Apply_android_patches()
 	fi
 	cd $PATCH_DIR
 	patch_root_dir="$PATCH_DIR"
-	android_patch_list=$(find . -type f -name "*.patch" | sort) &&
-	for android_patch in $android_patch_list; do
-		android_project=$(dirname $android_patch)
-		echo -e "applying patches on $android_project ... "
-		cd $BUILDROOT/$android_project 
-		if [ $? -ne 0 ]; then
-			echo -e "$android_project does not exist in BUILDROOT:$BUILDROOT "
-			exit 1
-		fi
-		git am --abort
-		git am $patch_root_dir/$android_patch	
-	done
-}
-
-# Function to autoapply Variscite patches to CAF code
-Apply_variscite_patches()
-{
-	cd $WORKDIR
-	git clone https://github.com/varigit/DART-SD410-repo-patch.git Variscite
-	git checkout LA.BR.1.2.4-01810-8x16
-	cd $BUILDROOT
-	echo "Applying variscite patches ..."
-	if [ ! -e $VAR_PATCH_DIR ]
-	then
-		echo -e "$VAR_PATCH_DIR : Not Found "
-	fi
-	cd $VAR_PATCH_DIR
-	patch_root_dir="$VAR_PATCH_DIR"
 	android_patch_list=$(find . -type f -name "*.patch" | sort) &&
 	for android_patch in $android_patch_list; do
 		android_project=$(dirname $android_patch)
@@ -121,13 +95,9 @@ cd $BUILDROOT
 #2 Apply APQ8016 410C Snapdragon Dragonboard patches
 Apply_android_patches
 cd $BUILDROOT
-#4 Binaries
+#3 Binaries
 pwd
 echo -e "   Extracting proprietary binary package to $BUILDROOT ... "
 tar -xzvf ../proprietary_LA.BR.1.2.4_01810_8x16.0_410C_Nov.tgz -C vendor/qcom/
-mv vendor/qcom/proprietary/WCNSS_qcom_wlan_nv.bin device/qcom/msm8916_64/
 
-#5 Apply Variscite SD410 patches
-Apply_variscite_patches
-cp $VAR_PATCH_DIR/device/qcom/msm8916_64/bootanimation.zip $BUILDROOT/device/qcom/msm8916_64/
 cd $BUILDROOT

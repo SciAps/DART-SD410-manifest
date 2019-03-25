@@ -202,4 +202,4 @@ TARGET=ngx \
 ```
 
 ### Important NOTE for for macOS Parallels users only
-After installation is complete, you will be on kernel 4.4.0-142 -- DO NOT UPGRADE, 4.4.0-143 is not supported by Parallels Tools yet!
+After installation is complete, you will be on kernel 4.4.0-31-generic -- DO NOT UPGRADE, 4.4.0-143 is not supported by Parallels Tools yet!

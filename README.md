@@ -165,6 +165,7 @@ If you see *Read only file system* when attempting to push files onto the device
 adb -d shell mount -o rw,remount / \
 && adb -d shell mount -o rw,remount /system
 ```
+If you are building for the ngx, you will need to switch your kernel branch to **LA.BR.1.2.4-01810-8x16_NGX** until we figure out how to get Kconfig and dtsi files to play nicely with one another.
 
 ### Flashing (define TARGET as *chem200* or *ngx*)
 Reboot the device into the bootloader:

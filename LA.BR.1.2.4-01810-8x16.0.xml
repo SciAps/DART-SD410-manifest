@@ -18,6 +18,7 @@
         <copyfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
     </project>
     <project remote="sciaps" path="device/qcom/msm8916_64" name="DART-SD410-device_qcom_msm8916_64" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="hardware/qcom/camera" name="DART-SD410-hardware_qcom_camera" revision="LA.BR.1.2.4-01810-8x16" />
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -372,7 +373,7 @@
     <project groups="pdk" name="platform/hardware/nvidia/tegra124" path="hardware/nvidia/tegra124" revision="77d1e2a4bb07d97a7f140f0fa8ddb8b6d52327f6" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom,default" name="platform/hardware/qcom/audio" path="hardware/qcom/audio" revision="f44feece4775fdb1d1d26f6abc22e6deb389b63c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom,default" name="platform/hardware/qcom/bt" path="hardware/qcom/bt" revision="9a7ff1d3b21d3f211f6535bedbe2e58d01779e1c" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="qcom,default" name="platform/hardware/qcom/camera" path="hardware/qcom/camera" revision="449f8c64ce76bc7ae06d7fb6931d73b58f403b3b" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project groups="qcom,default" name="platform/hardware/qcom/camera" path="hardware/qcom/camera" revision="449f8c64ce76bc7ae06d7fb6931d73b58f403b3b" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="qcom,default" name="platform/hardware/qcom/display" path="hardware/qcom/display" revision="f66558c691eac6cfc660bf0862c05abc8e431372" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom,default" name="platform/hardware/qcom/gps" path="hardware/qcom/gps" revision="41e96d2564b2d34f14eb832a952c4a33bfd1f1f1" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom" name="platform/hardware/qcom/keymaster" path="hardware/qcom/keymaster" revision="5d3fec3d4a776cd023b10e0b05e361cc8e877359" upstream="LA.BR.1.2.4_rb1.10"/>

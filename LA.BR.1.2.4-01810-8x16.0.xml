@@ -13,7 +13,7 @@
     <project remote="sciaps" path="build" name="DART-SD410-build" revision="LA.BR.1.2.4-01810-8x16">
         <copyfile dest="Makefile" src="core/root.mk"/>
     </project>
-    <project remote="sciaps" path="device/qcom/common" name="DART-SD410-device_qcom_common" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="device/qcom/common" name="DART-SD410-device_qcom_common" revision="LA.BR.1.2.4-01810-8x16">
         <copyfile dest="build.sh" src="build.sh"/>
         <copyfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
     </project>

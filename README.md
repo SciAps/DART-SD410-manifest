@@ -21,6 +21,7 @@ https://www.ubuntu.com/download/alternative-downloads
 11. Under "Mouse & Keyboard", make sure *Don't optimize for games* is selected
 12. Close the "Configuration" window and click *Continue*
 13. Once Ubuntu is up and running, install Parallels Tools by clicking on the yellow icon in the top-right corner of the Ubuntu VM window
+14. IMPORTANT - After installation is complete, you will be on kernel 4.4.0-31-generic -- DO NOT UPGRADE, 4.4.0-143 is not supported by Parallels Tools yet!
 
 ### Download Packages
 ```bash
@@ -201,6 +202,3 @@ TARGET=ngx \
 && sudo fastboot flash boot boot.img \
 && sudo fastboot reboot
 ```
-
-### Important NOTE for for macOS Parallels users only
-After installation is complete, you will be on kernel 4.4.0-31-generic -- DO NOT UPGRADE, 4.4.0-143 is not supported by Parallels Tools yet!

@@ -56,8 +56,8 @@ mkdir -p ~/bin \
 
 Before running this command, define FULL_NAME and EMAIL accordingly:
 ```bash
-FULL_NAME=Stephen Gowen \
-&& EMAIL=dev.sgowen@gmail.com \
+FULL_NAME="Stephen Gowen" \
+&& EMAIL="dev.sgowen@gmail.com" \
 && git config --global user.name "$FULL_NAME" \
 && git config --global user.email "$EMAIL" \
 && ssh-keygen -t rsa -N "" -b 4096 -C "$EMAIL" -f ~/.ssh/id_rsa \

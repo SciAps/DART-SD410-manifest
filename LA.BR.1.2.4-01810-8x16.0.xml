@@ -20,6 +20,14 @@
     <project remote="sciaps" path="device/qcom/msm8916_64" name="DART-SD410-device_qcom_msm8916_64" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="hardware/qcom/camera" name="DART-SD410-hardware_qcom_camera" revision="LA.BR.1.2.4-01810-8x16" />
     
+    <project remote="sciaps" path="bootable/bootloader/lk" name="DART-SD410-bootable_bootloader_lk" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="device/qcom/msm8916" name="DART-SD410-device_qcom_msm8916" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="device/qcom/msm8916_32" name="DART-SD410-device_qcom_msm8916_32" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="device/qcom/sepolicy" name="DART-SD410-device_qcom_sepolicy" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="hardware/qcom/display" name="DART-SD410-hardware_qcom_display" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="packages/apps/Settings" name="DART-SD410-packages_apps_Settings" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="system/core" name="DART-SD410-system_core" revision="LA.BR.1.2.4-01810-8x16"/>
+    
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/fugu" revision="ab97974337c77abe4c2ad661bd9edf058db94247" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -51,10 +59,10 @@
 <!--        <copyfile dest="build.sh" src="build.sh"/>-->
 <!--        <copyfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>-->
 <!--    </project>-->
-    <project name="device/qcom/sepolicy" revision="87ddf84557405d72ec7f7332922d0e4630ef8de5" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="device/qcom/sepolicy" revision="87ddf84557405d72ec7f7332922d0e4630ef8de5" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk" name="device/sample" revision="83118f3bb87497cf3291ce4e858d8038f9fe7cc3" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/samsung/manta" revision="77236f3331983f283d8d045cd12a4f5b039e5ab5" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="kernel/lk" path="bootable/bootloader/lk" revision="deb00ea65d68e45e2730fc8f901404c31bb3074f" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="kernel/lk" path="bootable/bootloader/lk" revision="deb00ea65d68e45e2730fc8f901404c31bb3074f" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk" name="platform/abi/cpp" path="abi/cpp" revision="a0f99286d0909f7a30b0bee742bec2a0b62c4dd0" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/art" path="art" revision="5ad9aa464731b33f1d57d9b99e89caab39108df4" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/bionic" path="bionic" revision="349b61732ae96eb644f7629635b4cbfc71c4b9ba" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -374,7 +382,7 @@
     <project groups="qcom,default" name="platform/hardware/qcom/audio" path="hardware/qcom/audio" revision="f44feece4775fdb1d1d26f6abc22e6deb389b63c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom,default" name="platform/hardware/qcom/bt" path="hardware/qcom/bt" revision="9a7ff1d3b21d3f211f6535bedbe2e58d01779e1c" upstream="LA.BR.1.2.4_rb1.10"/>
 <!--    <project groups="qcom,default" name="platform/hardware/qcom/camera" path="hardware/qcom/camera" revision="449f8c64ce76bc7ae06d7fb6931d73b58f403b3b" upstream="LA.BR.1.2.4_rb1.10"/>-->
-    <project groups="qcom,default" name="platform/hardware/qcom/display" path="hardware/qcom/display" revision="f66558c691eac6cfc660bf0862c05abc8e431372" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project groups="qcom,default" name="platform/hardware/qcom/display" path="hardware/qcom/display" revision="f66558c691eac6cfc660bf0862c05abc8e431372" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="qcom,default" name="platform/hardware/qcom/gps" path="hardware/qcom/gps" revision="41e96d2564b2d34f14eb832a952c4a33bfd1f1f1" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom" name="platform/hardware/qcom/keymaster" path="hardware/qcom/keymaster" revision="5d3fec3d4a776cd023b10e0b05e361cc8e877359" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="qcom,default" name="platform/hardware/qcom/media" path="hardware/qcom/media" revision="2ea2927a4458815da666d3d0807d3f3281943b55" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -423,7 +431,7 @@
     <project name="platform/packages/apps/Protips" path="packages/apps/Protips" revision="9b6836aabee945b6c7a54796a4e6a7ae735f423c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Provision" path="packages/apps/Provision" revision="78ca0db658fe6253d506916e36319e620476f809" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/QuickSearchBox" path="packages/apps/QuickSearchBox" revision="060e6dce205aeeec476a219e3621629a15f7cadb" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/packages/apps/Settings" path="packages/apps/Settings" revision="6df1b0873d6150bfe4475f0d9233f63a2d96e5e8" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="platform/packages/apps/Settings" path="packages/apps/Settings" revision="6df1b0873d6150bfe4475f0d9233f63a2d96e5e8" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project name="platform/packages/apps/SmartCardService" path="packages/apps/SmartCardService" revision="75bd4d79dda0eb4f17f1644af600f873b943c9ad" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/SnapdragonCamera" path="packages/apps/SnapdragonCamera" revision="cb2f6d6ac8864c56c6974c43d6b101996085591b" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/SoundRecorder" path="packages/apps/SoundRecorder" revision="3af16d40987d899aaceaa8f0861b95cf81a76abf" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -516,7 +524,7 @@
     <project groups="pdk" name="platform/prebuilts/sdk" path="prebuilts/sdk" revision="ec41fa27bbd19fa2f21d5e36dbf21b3427915ad7" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk,tools" name="platform/prebuilts/tools" path="prebuilts/tools" revision="eaa2c335d0b1a96c146e570fee834d815902a048" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/sdk" path="sdk" revision="071081e8e5ca8544c83696e13e99134cc74b3b28" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk" name="platform/system/core" path="system/core" revision="056480e54c25f3b4283dd3e62dd73359e107fd3b" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project groups="pdk" name="platform/system/core" path="system/core" revision="056480e54c25f3b4283dd3e62dd73359e107fd3b" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk" name="platform/system/extras" path="system/extras" revision="c8ccc878cc19dd86ef9fa151fc4bb356b03b8ded" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/system/keymaster" path="system/keymaster" revision="2c077336a09b1ee589d1ecbeeb7bbed41a7aaf8f" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/system/media" path="system/media" revision="2198179c028f8c6271e9584927e97417a1666f64" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -541,8 +549,8 @@
     <project name="platform/vendor/qcom/ferrum" path="device/qcom/msm8909" revision="f7d0a1b80feeee7c01bdcf7a161a8de78801b791" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/ferrum_512" path="device/qcom/msm8909_512" revision="e9d77d3725052c72c31833e8e237655f7ec6d150" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/ferrum_LMT" path="device/qcom/msm8909_LMT" revision="bbb26e6c203b80a972078fd18ac7c5785d2d1348" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/vendor/qcom/msm8916" path="device/qcom/msm8916" revision="fdb499bba3a9c53c1e09480a359e9247ff8d52b4" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/vendor/qcom/msm8916_32" path="device/qcom/msm8916_32" revision="6d8c9bf5e310933be0812306a2293eb98d92de38" upstream="LA.BR.1.2.4_rb1.10"/>
+<!--    <project name="platform/vendor/qcom/msm8916" path="device/qcom/msm8916" revision="fdb499bba3a9c53c1e09480a359e9247ff8d52b4" upstream="LA.BR.1.2.4_rb1.10"/>-->
+<!--    <project name="platform/vendor/qcom/msm8916_32" path="device/qcom/msm8916_32" revision="6d8c9bf5e310933be0812306a2293eb98d92de38" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project name="platform/vendor/qcom/msm8916_32_512" path="device/qcom/msm8916_32_512" revision="ae46dffd9a1076e1af02d478b99bc1ee8550f1b2" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/msm8916_32_LMT" path="device/qcom/msm8916_32_LMT" revision="4318bf841a1030b37dea14fe66d1b395c05a3930" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/vendor/qcom/msm8916_32_k64" path="device/qcom/msm8916_32_k64" revision="25cc643509d4e4848bc437f71b9487bd2b3ff69b" upstream="LA.BR.1.2.4_rb1.10"/>

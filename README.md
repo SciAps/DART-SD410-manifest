@@ -128,15 +128,24 @@ cd ~/dart-sd410 \
 && unzip Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip
 ```
 
-### Download and execute our setup script (modified from SD410c_build.sh), which invokes repo sync and applies patches to several projects
+### Download projects via repo sync
 ```bash
 cd ~/dart-sd410/source \
-&& curl https://raw.githubusercontent.com/SciAps/DART-SD410-manifest/master/SD410c_setup.sh > SD410c_setup.sh \
-&& chmod +x SD410c_setup.sh \
-&& ./SD410c_setup.sh
+&& mkdir APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& cd APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& repo init -u git@github.com:SciAps/DART-SD410-manifest.git --repo-url=git://codeaurora.org/tools/repo.git \
+&& repo sync -j8 \
+&& repo forall -c "git checkout -b master" \
+&& repo forall -c "git checkout -b LA.BR.1.2.4-01810-8x16"
 ```
 
 Enter **yes** 2 times when prompted, then hit **[ENTER]** at the Your Name/Email prompts, then enter **y** 2 times to continue
+
+### Extract proprietary binary package to vendor/qcom/ 
+```bash
+cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& tar -xzvf ../proprietary_LA.BR.1.2.4_01810_8x16.0_410C_Nov.tgz -C vendor/qcom/
+```
 
 ### Building (define TARGET as *chem200* or *ngx*)
 ```bash
@@ -176,7 +185,8 @@ Flash the System and Boot!
 ```bash
 TARGET=ngx \
 && RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
-&& BUILT_IMAGES_DIR=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2/out/target/product/$TARGET \
+&& AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& BUILT_IMAGES_DIR=$AOSP_ROOT/out/target/product/$TARGET \
 && sudo fastboot erase DDR \
 && sudo fastboot erase aboot \
 && sudo fastboot erase abootbak \

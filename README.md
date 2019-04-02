@@ -177,28 +177,56 @@ Flash the System and Boot!
 ```bash
 TARGET=ngx \
 && RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
+&& BUILT_IMAGES_DIR=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2/out/target/product/$TARGET \
+&& sudo fastboot erase DDR \
+&& sudo fastboot erase aboot \
+&& sudo fastboot erase abootbak \
+&& sudo fastboot erase boot \
+&& sudo fastboot format cache \
+&& sudo fastboot erase config \
+&& sudo fastboot erase devinfo \
+&& sudo fastboot erase fsc \
+&& sudo fastboot erase fsg \
+&& sudo fastboot erase hyp \
+&& sudo fastboot erase hypbak \
+&& sudo fastboot erase keystore \
+&& sudo fastboot erase misc \
+&& sudo fastboot erase modem \
+&& sudo fastboot erase modemst1 \
+&& sudo fastboot erase modemst2 \
+&& sudo fastboot erase oem \
+&& sudo fastboot erase persist \
+&& sudo fastboot erase recovery \
+&& sudo fastboot erase rpm \
+&& sudo fastboot erase rpmbak \
+&& sudo fastboot erase sbl1 \
+&& sudo fastboot erase sbl1bak \
+&& sudo fastboot erase sec \
+&& sudo fastboot erase ssd \
+&& sudo fastboot format system \
+&& sudo fastboot erase tz \
+&& sudo fastboot erase tzbak \
+&& sudo fastboot format userdata \
 && cd $RESCUE_IMAGES_ROOT \
 && sudo fastboot flash partition gpt_both0.bin \
 && sudo fastboot flash hyp hyp.mbn \
+&& sudo fastboot flash hypbak hyp.mbn \
 && sudo fastboot flash modem NON-HLOS.bin \
 && sudo fastboot flash rpm rpm.mbn \
+&& sudo fastboot flash rpmbak rpm.mbn \
 && sudo fastboot flash sbl1 sbl1.mbn \
+&& sudo fastboot flash sbl1bak sbl1.mbn \
 && sudo fastboot flash sec sec.dat \
 && sudo fastboot flash tz tz.mbn \
-&& sudo fastboot flash sbl1bak sbl1.mbn \
-&& sudo fastboot flash hypbak hyp.mbn \
-&& sudo fastboot flash rpmbak rpm.mbn \
 && sudo fastboot flash tzbak tz.mbn \
-&& sudo fastboot erase cache \
-&& sudo fastboot erase devinfo \
-&& AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cd $AOSP_ROOT/out/target/product/$TARGET/ \
+&& cd $BUILT_IMAGES_DIR \
+&& sudo fastboot flash boot boot.img \
+&& sudo fastboot flash cache cache.img \
 && sudo fastboot flash aboot emmc_appsboot.mbn \
 && sudo fastboot flash abootbak emmc_appsboot.mbn \
 && sudo fastboot flash persist persist.img \
-&& sudo fastboot flash userdata userdata.img \
-&& sudo fastboot flash system system.img \
 && sudo fastboot flash recovery recovery.img \
-&& sudo fastboot flash boot boot.img \
+&& sudo fastboot flash system system.img \
+&& sudo fastboot flash userdata userdata.img \
 && sudo fastboot reboot
 ```

@@ -5,7 +5,7 @@
 2. http://variwiki.com/index.php?title=DART-SD410
 
 ### Download Ubuntu 14.04 iso
-https://www.ubuntu.com/download/alternative-downloads
+https://s3.us-east-2.amazonaws.com/sciaps-ubuntu/ubuntu-14.04.5-desktop-amd64.iso
 
 ### Preliminary steps for macOS Parallels users only
 1. Open the Parallels Control Center and click on the *+* symbol in the top-right corner

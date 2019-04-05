@@ -147,13 +147,14 @@ cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && tar -xzvf ../proprietary_LA.BR.1.2.4_01810_8x16.0_410C_Nov.tgz -C vendor/qcom/
 ```
 
-### Building (define TARGET as *chem200* or *ngx*)
+### Building (define TARGET as *chem200* or *ngx*, and NUM_THREADS as your number of CPU cores times 2)
 ```bash
-TARGET=ngx \
+NUM_THREADS=8 \
+&& TARGET=ngx \
 && cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
-&& m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
+&& m -j$NUM_THREADS WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
 The above command may fail on a linker step. If so, just re-run the command on a single thread (below).

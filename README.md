@@ -156,6 +156,8 @@ TARGET=ngx \
 && m -j14 WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
+The above command may fail on a linker step. If so, just re-run the command on a single thread (below).
+
 ### Rebuilding (same as the previous command, but on a single thread | define TARGET as *chem200* or *ngx*)
 ```bash
 TARGET=ngx \

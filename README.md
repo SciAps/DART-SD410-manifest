@@ -121,18 +121,11 @@ At the bottom of the file, you need to add a line that will tell the operating s
 
 Hit CTRL+X and then Y to save and exit, and your swap is good to go.
 
-### Unzip Variscite's Board Support Package (creates ~/dart-sd410/source)
-```bash
-cd ~/dart-sd410 \
-&& rm -rf source \
-&& unzip Software/Android/Android_5/LL.1.2.4-01810-8x16.0-3/variscite_bsp_vla.br_.1.2.4-01810-8x16.0-3.zip
-```
-
 ### Download projects via repo sync
 ```bash
-cd ~/dart-sd410/source \
-&& mkdir APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& cd APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& mkdir -p $AOSP_ROOT \
+&& cd $AOSP_ROOT \
 && repo init -u git@github.com:SciAps/DART-SD410-manifest.git --repo-url=git://codeaurora.org/tools/repo.git \
 && repo sync -j8 \
 && repo forall -c "git checkout -b master" \
@@ -141,13 +134,9 @@ cd ~/dart-sd410/source \
 
 Enter **yes** 2 times when prompted, then hit **[ENTER]** at the Your Name/Email prompts, then enter **y** 2 times to continue
 
-### Extract proprietary binary package to vendor/qcom/ 
-```bash
-cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
-&& tar -xzvf ../proprietary_LA.BR.1.2.4_01810_8x16.0_410C_Nov.tgz -C vendor/qcom/
-```
-
 If you are building for the *ngx*, you will need to switch your kernel branch to **LA.BR.1.2.4-01810-8x16_NGX** until we figure out how to get Kconfig and dtsi files to play nicely with one another.
+
+Also, feel free to run repo sync whenever you want to pull the latest!
 
 ### Building (define TARGET as *chem200* or *ngx*, and NUM_THREADS as your number of CPU cores times 2)
 ```bash

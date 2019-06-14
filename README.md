@@ -123,7 +123,7 @@ Hit CTRL+X and then Y to save and exit, and your swap is good to go.
 
 ### Download projects via repo sync
 ```bash
-AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+AOSP_ROOT=~/dart-sd410/source \
 && mkdir -p $AOSP_ROOT \
 && cd $AOSP_ROOT \
 && repo init -u git@github.com:SciAps/DART-SD410-manifest.git --repo-url=git://codeaurora.org/tools/repo.git \

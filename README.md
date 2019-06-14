@@ -145,6 +145,7 @@ NUM_THREADS=8 \
 && cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
+&& make update-api \
 && m -j$NUM_THREADS WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 

@@ -179,7 +179,7 @@ Flash the System and Boot!
 ```bash
 TARGET=ngx \
 && RESCUE_IMAGES_ROOT=~/dart-sd410/Software/Android/Android_5/RescueImages \
-&& AOSP_ROOT=~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& AOSP_ROOT=~/dart-sd410/source/ \
 && BUILT_IMAGES_DIR=$AOSP_ROOT/out/target/product/$TARGET \
 && sudo fastboot erase DDR \
 && sudo fastboot erase aboot \

@@ -142,7 +142,7 @@ Also, feel free to run repo sync whenever you want to pull the latest!
 ```bash
 NUM_THREADS=8 \
 && TARGET=ngx \
-&& cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& cd ~/dart-sd410/source/ \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
 && make update-api \
@@ -154,7 +154,7 @@ The above command may fail on a linker step. If so, just re-run the command on a
 ### Rebuilding (same as the previous command, but on a single thread | define TARGET as *chem200* or *ngx*)
 ```bash
 TARGET=ngx \
-&& cd ~/dart-sd410/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2 \
+&& cd ~/dart-sd410/source/ \
 && . build/envsetup.sh \
 && lunch $TARGET-eng \
 && m WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt

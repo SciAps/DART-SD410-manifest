@@ -102,6 +102,31 @@ rm -rf ~/Android/Sdk/ndk-bundle/ \
 sudo sh -c 'echo "ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle/" >> /etc/environment'
 ```
 
+### Download the FETCH tool
+```bash
+mkdir $HOME/bin/ \
+&& wget -O ~/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.3.5/fetch_linux_amd64 \
+&& chmod 775 ~/bin/fetch
+```
+
+### Add the following to the end of ~/.gitconfig
+```bash
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    in = ! git fetch && git log --pretty=short HEAD..origin
+    out = log --pretty=short origin..HEAD
+    unstage = reset HEAD
+[core]
+    editor = vi
+```
+
+### Install the AWS Command Line Interface to the machine
+Follow the instructions in this link
+https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html
+
 ### Unless you have 16G of Ram, you will need swap memory
 [more on this here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
 ```bash
@@ -137,6 +162,18 @@ Enter **yes** 2 times when prompted, then hit **[ENTER]** at the Your Name/Email
 If you are building for the *ngx*, you will need to switch your kernel branch to **LA.BR.1.2.4-01810-8x16_NGX** until we figure out how to get Kconfig and dtsi files to play nicely with one another.
 
 Also, feel free to run repo sync whenever you want to pull the latest!
+
+### Add the following lines to the end of ~/.profile
+```bash
+export ANDROID_SDK=$HOME/Android/Sdk/
+export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle/ 
+export AOSP_ROOT=$SCIAPS_ROOT/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2
+export GITHUB_OAUTH_TOKEN=3997fc82d970fd1f66640059927571a54cedd121
+export PATH=~/.local/bin:$PATH
+```
+If a new token is needed, this link will give you your own token, but it can only be viewed once before you have to 
+generate a new one
+https://github.com/settings/tokens
 
 ### Building (define TARGET as *chem200* or *ngx*, and NUM_THREADS as your number of CPU cores times 2)
 ```bash

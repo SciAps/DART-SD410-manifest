@@ -29,6 +29,7 @@
     <project remote="sciaps" path="system/core" name="DART-SD410-system_core" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="vendor/qcom/proprietary" name="DART-SD410-vendor_qcom_proprietary" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="external/busybox" name="busybox-android" revision="sciaps"/>
+    <project remote="sciaps" path="external/fpgaprogrammer" name="fpgaprogrammer" revision="master"/>
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>

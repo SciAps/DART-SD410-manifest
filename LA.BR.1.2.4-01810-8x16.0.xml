@@ -30,6 +30,9 @@
     <project remote="sciaps" path="vendor/qcom/proprietary" name="DART-SD410-vendor_qcom_proprietary" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="external/busybox" name="busybox-android" revision="sciaps"/>
     <project remote="sciaps" path="external/fpgaprogrammer" name="fpgaprogrammer" revision="master"/>
+    <project remote="sciaps" path="external/compiler-rt" name="compiler-rt" revision="sciaps"/>
+    <project remote="sciaps" path="external/valgrind" name="platform/external/valgrind" revision="sciaps"/>
+    <project remote="sciaps" path="art" name="DART-SD410-art" revision="sciaps"/>
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="device/asus/flo-kernel" revision="9a9c02295c32c1543443602c04bb88ccae34073c" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -67,7 +70,6 @@
     <project groups="pdk" name="device/samsung/manta" revision="77236f3331983f283d8d045cd12a4f5b039e5ab5" upstream="LA.BR.1.2.4_rb1.10"/>
 <!--    <project name="kernel/lk" path="bootable/bootloader/lk" revision="deb00ea65d68e45e2730fc8f901404c31bb3074f" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project groups="pdk" name="platform/abi/cpp" path="abi/cpp" revision="a0f99286d0909f7a30b0bee742bec2a0b62c4dd0" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk" name="platform/art" path="art" revision="5ad9aa464731b33f1d57d9b99e89caab39108df4" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/bionic" path="bionic" revision="349b61732ae96eb644f7629635b4cbfc71c4b9ba" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/bootable/bootloader/legacy" path="bootable/bootloader/legacy" revision="3c491d6efb8ff2534a6934702760a6273f197918" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/bootable/recovery" path="bootable/recovery" revision="eb1313d99178a59c1d8f82807a02ad1bece41617" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -140,7 +142,6 @@
     <project name="platform/external/chromium_org/v8" path="external/chromium_org/v8" revision="ad6f8f1d93f5d967d579714d5365247caed2c25e" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/clang" path="external/clang" revision="87c8285ba5494063845618b2f4a6cf0e91ade02c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/external/cmockery" path="external/cmockery" revision="bdd62c531bbdea115a3a7e71bba91c19dd319cc4" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk" name="platform/external/compiler-rt" path="external/compiler-rt" revision="11f8ffed1d651dcafcb4f85ffc561a9eac13f844" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/external/connectivity" path="external/connectivity" revision="67c32f79eb2f4e3c9ae0110baaa9a5bf14fb0827" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/external/conntrack-tools" path="external/conntrack-tools" revision="92246dcc1fdcf222302a42926e0e95af2c30463e" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs" name="platform/external/conscrypt" path="external/conscrypt" revision="c32183a7b33c2863e9cbf1be33a34902de85d261" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -313,7 +314,6 @@
     <project groups="pdk" name="platform/external/tinyxml" path="external/tinyxml" revision="f065a8058659c0e6c5a5ccddcdb4faf0fe645cd0" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/tinyxml2" path="external/tinyxml2" revision="6ca7d21186782f7b02e696a9d2bdd538805e511e" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/tremolo" path="external/tremolo" revision="4955bfb4caeb9b0b03b85a1e886674ddbccdb44f" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project groups="pdk" name="platform/external/valgrind" path="external/valgrind" revision="5ddeb576ce582b81842a97d836f6a28cd419f7b3" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/vixl" path="external/vixl" revision="29d04c1f6d91ab8336f419bd854e5badcccbc706" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk-cw-fs,qcom_msm8x26" name="platform/external/webp" path="external/webp" revision="af51b94a435132e9014c324e25fb686b3d07a8c8" upstream="LA.BR.1.2.4_rb1.10"/>
     <project groups="pdk" name="platform/external/webrtc" path="external/webrtc" revision="96907bb2db8383d06970a5d23163bfcbc50f8089" upstream="LA.BR.1.2.4_rb1.10"/>

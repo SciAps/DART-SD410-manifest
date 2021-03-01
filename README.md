@@ -102,13 +102,6 @@ rm -rf ~/Android/Sdk/ndk-bundle/ \
 sudo sh -c 'echo "ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle/" >> /etc/environment'
 ```
 
-### Download the FETCH tool
-```bash
-mkdir $HOME/bin/ \
-&& wget -O ~/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.3.5/fetch_linux_amd64 \
-&& chmod 775 ~/bin/fetch
-```
-
 ### Add the following to the end of ~/.gitconfig
 ```bash
 [alias]
@@ -122,10 +115,6 @@ mkdir $HOME/bin/ \
 [core]
     editor = vi
 ```
-
-### Install the AWS Command Line Interface to the machine
-Follow the instructions in this link
-https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html
 
 ### Unless you have 16G of Ram, you will need swap memory
 [more on this here](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
@@ -163,6 +152,11 @@ If you are building for the *ngx*, you will need to switch your kernel branch to
 
 Also, feel free to run repo sync whenever you want to pull the latest!
 
+### SciAps APKs
+Three prebuilt APKs are required: NGXHome, XRFAndroid and updater for NGX, and NGXHome, NGLAndroid and updater for NGL.  For official builds these will be pulled down from GitHub by a script.  For other builds fallback apks can be used and updated manually after flashing.  These can be found in vendor/sciaps/fallback_apks/ngx (or ngl) and need to be copied into vendor/sciaps.
+
+```% cp vendor/sciaps/fallback_apks/ngx/* vendor/sciaps/```
+
 ### Add the following lines to the end of ~/.profile
 ```bash
 export ANDROID_SDK=$HOME/Android/Sdk/
@@ -181,7 +175,7 @@ NUM_THREADS=8 \
 && TARGET=ngx \
 && cd ~/dart-sd410/source/ \
 && . build/envsetup.sh \
-&& lunch $TARGET-eng \
+&& lunch $TARGET-userdebug \
 && make update-api \
 && m -j$NUM_THREADS WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
@@ -193,7 +187,7 @@ The above command may fail on a linker step. If so, just re-run the command on a
 TARGET=ngx \
 && cd ~/dart-sd410/source/ \
 && . build/envsetup.sh \
-&& lunch $TARGET-eng \
+&& lunch $TARGET-userdebug \
 && m WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
 ```
 
@@ -270,3 +264,46 @@ TARGET=ngx \
 && sudo fastboot flash userdata userdata.img \
 && sudo fastboot reboot
 ```
+
+## Official Builds
+Official builds are produced using tagged build artifacts created by CI builds that are automatically triggered by the git tag creation.  Details about which build artifacts to include are read from a manifest file under the apk_manifests/ngx (or ngl) directory.
+
+For example:
+```
+APP_REPO=XRFAndroid
+APP_TAG=ngx-v1.1-4
+APP_ASSET=production_ProdNGXRelease_ngx-v1.1-4-0-g6c26c66.zip
+APP_APK=XRFAndroid-release.apk
+```
+
+### Download the FETCH tool
+```bash
+mkdir $HOME/bin/ \
+&& wget -O ~/bin/fetch https://github.com/gruntwork-io/fetch/releases/download/v0.3.5/fetch_linux_amd64 \
+&& chmod 775 ~/bin/fetch
+```
+
+### Install the AWS Command Line Interface to the machine
+Follow the instructions in this [link:](https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html)
+
+### Install the build scripts:
+```% vendor/sciaps/release_tools/install.sh```
+
+### Copy prebuilt APKs from GitHub:
+```% ./prepare_sciaps_release ngx v1.1-4```
+
+### Build (as above) 
+```bash
+TARGET=ngx \
+&& cd ~/dart-sd410/source/ \
+&& . build/envsetup.sh \
+&& lunch $TARGET-userdebug \
+&& m WITH_DEXPREOPT=true WITH_DEXPREOPT_PIC=true DEX_PREOPT_DEFAULT=nostripping | tee log.txt
+```
+
+### Zip the release files:
+```% ./package_sciaps_release ngx v1.1-4```
+
+### Publish the release to AWS:
+```% ./publish_sciaps_release ngx v1.1-4```
+

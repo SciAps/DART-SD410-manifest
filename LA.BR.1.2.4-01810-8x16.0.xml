@@ -31,7 +31,7 @@
     <project remote="sciaps" path="external/busybox" name="busybox-android" revision="sciaps"/>
     <project remote="sciaps" path="external/fpgaprogrammer" name="fpgaprogrammer" revision="master"/>
     <project remote="sciaps" path="external/compiler-rt" name="compiler-rt" revision="sciaps"/>
-    <project remote="sciaps" path="external/valgrind" name="platform/external/valgrind" revision="sciaps"/>
+    <project remote="sciaps" path="external/valgrind" name="valgrind" revision="sciaps"/>
     <project remote="sciaps" path="art" name="DART-SD410-art" revision="sciaps"/>
     
     <project groups="pdk" name="device/asus/deb" revision="0e32bac541b31816a435562284045268f0c31a19" upstream="LA.BR.1.2.4_rb1.10"/>

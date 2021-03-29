@@ -161,7 +161,7 @@ Three prebuilt APKs are required: NGXHome, XRFAndroid and updater for NGX, and N
 ```bash
 export ANDROID_SDK=$HOME/Android/Sdk/
 export ANDROID_NDK_HOME=$HOME/Android/Sdk/ndk-bundle/ 
-export AOSP_ROOT=$SCIAPS_ROOT/source/APQ8016_410C_LA.BR.1.2.4-01810-8x16.0_5.1.1_Lollipop_P2
+export AOSP_ROOT=$SCIAPS_ROOT/source
 export GITHUB_OAUTH_TOKEN=3997fc82d970fd1f66640059927571a54cedd121
 export PATH=~/.local/bin:$PATH
 ```

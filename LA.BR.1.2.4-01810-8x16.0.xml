@@ -19,6 +19,8 @@
     </project>
     <project remote="sciaps" path="device/qcom/msm8916_64" name="DART-SD410-device_qcom_msm8916_64" revision="LA.BR.1.2.4-01810-8x16" />
     <project remote="sciaps" path="hardware/qcom/camera" name="DART-SD410-hardware_qcom_camera" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="hardware/qcom/gps" name="DART-SD410-hardware_qcom_gps" revision="LA.BR.1.2.4-01810-8x16" />
+    <project remote="sciaps" path="hardware/qcom/wlan" name="DART-SD410-hardware_qcom_wlan" revision="LA.BR.1.2.4-01810-8x16" />
     
     <project remote="sciaps" path="bootable/bootloader/lk" name="DART-SD410-bootable_bootloader_lk" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="device/qcom/msm8916" name="DART-SD410-device_qcom_msm8916" revision="LA.BR.1.2.4-01810-8x16"/>

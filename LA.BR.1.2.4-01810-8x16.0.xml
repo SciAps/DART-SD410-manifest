@@ -28,6 +28,7 @@
     <project remote="sciaps" path="device/qcom/sepolicy" name="DART-SD410-device_qcom_sepolicy" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="hardware/qcom/display" name="DART-SD410-hardware_qcom_display" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="packages/apps/Settings" name="DART-SD410-packages_apps_Settings" revision="LA.BR.1.2.4-01810-8x16"/>
+    <project remote="sciaps" path="packages/apps/Email" name="DART-SD410-packages_apps_Email" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="system/core" name="DART-SD410-system_core" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="vendor/qcom/proprietary" name="DART-SD410-vendor_qcom_proprietary" revision="LA.BR.1.2.4-01810-8x16"/>
     <project remote="sciaps" path="external/busybox" name="busybox-android" revision="sciaps"/>
@@ -414,7 +415,6 @@
     <project name="platform/packages/apps/ContactsCommon" path="packages/apps/ContactsCommon" revision="2fe785f32ad5024883aba59d798816936b13f350" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/DeskClock" path="packages/apps/DeskClock" revision="63b523cc7ca6a326da8becf57ebcd8ed854d21e7" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Dialer" path="packages/apps/Dialer" revision="c99d4400fb547a5a8a28b818fcfbce8afdba5198" upstream="LA.BR.1.2.4_rb1.10"/>
-    <project name="platform/packages/apps/Email" path="packages/apps/Email" revision="b42adfb1e7a7799db075487e447c9c5a34811996" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Exchange" path="packages/apps/Exchange" revision="cf442830971f0a19b60656eb919e6255aa3db108" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/FastPowerOn" path="packages/apps/FastPowerOn" revision="8c59db5a7bdbc295d95162ee37e03b8b5102b6ad" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Gallery" path="packages/apps/Gallery" revision="18b7fda2cc392b8df6d461fde08068a776983b0f" upstream="LA.BR.1.2.4_rb1.10"/>
@@ -436,7 +436,6 @@
     <project name="platform/packages/apps/Protips" path="packages/apps/Protips" revision="9b6836aabee945b6c7a54796a4e6a7ae735f423c" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/Provision" path="packages/apps/Provision" revision="78ca0db658fe6253d506916e36319e620476f809" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/QuickSearchBox" path="packages/apps/QuickSearchBox" revision="060e6dce205aeeec476a219e3621629a15f7cadb" upstream="LA.BR.1.2.4_rb1.10"/>
-<!--    <project name="platform/packages/apps/Settings" path="packages/apps/Settings" revision="6df1b0873d6150bfe4475f0d9233f63a2d96e5e8" upstream="LA.BR.1.2.4_rb1.10"/>-->
     <project name="platform/packages/apps/SmartCardService" path="packages/apps/SmartCardService" revision="75bd4d79dda0eb4f17f1644af600f873b943c9ad" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/SnapdragonCamera" path="packages/apps/SnapdragonCamera" revision="cb2f6d6ac8864c56c6974c43d6b101996085591b" upstream="LA.BR.1.2.4_rb1.10"/>
     <project name="platform/packages/apps/SoundRecorder" path="packages/apps/SoundRecorder" revision="3af16d40987d899aaceaa8f0861b95cf81a76abf" upstream="LA.BR.1.2.4_rb1.10"/>
